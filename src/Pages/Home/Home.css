@@ -1,0 +1,46 @@
+.bordered{
+border: 5px solid green;
+padding: 5px;
+}
+
+.ill-orig{
+    float: right;
+    max-width: 50%;
+    position: relative;
+    margin: 4%;
+    margin-top: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.para > ul > li {
+    padding: 5px;
+}
+
+li > h6 {
+    padding: 14px;
+}
+
+.secondary-bg{
+    background-color: #282c34;
+}
+
+.tertiary-bg{
+    background-color: #f8ac3b;
+    margin: 1%;
+    color: white;
+}
+
+.av-img{
+    height: 20vh;
+    min-height: 200px;
+    min-width: 100%;
+    padding: 0;
+    margin: 0;
+    pointer-events: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}

@@ -1,0 +1,34 @@
+.card{
+    width: 15rem !important;
+    color: black;
+    font-size: 0.9rem;
+    margin: 7%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card:hover{
+    cursor:pointer
+}
+
+.card-img-top {
+    width: 100%;
+    height: 20vh;
+    min-height: 200px;
+    object-fit: cover;
+}
+
+.sp{
+    min-height: 130px;
+}
+
+@media (max-width: 900px) {
+    .row{
+      display: block !important;
+    }
+}
+
+.mar-people{
+    margin: auto;
+    width: 100%;
+    margin-bottom: 5%;
+}
