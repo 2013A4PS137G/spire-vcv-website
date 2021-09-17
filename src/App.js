@@ -1,5 +1,6 @@
 import './App.scss';
 import 'bootstrap/dist/js/bootstrap.bundle'
+import React from 'react';
 import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
 
 import RecordingSetup from './Pages/RecordingSetup/RecordingSetup';
@@ -9,6 +10,7 @@ import People from './Pages/People/People';
 import Publication from './Pages/Publication/Publication';
 import Download from './Pages/Download/Download';
 import Navbar from './Components/Navbar/Navbar';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
@@ -45,6 +47,7 @@ function App() {
           <Redirect to="/" />
         </Switch>
       </main>
+      <Footer/>
       </Router>
     </div>
    );

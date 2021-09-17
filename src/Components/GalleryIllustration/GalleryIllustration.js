@@ -4,27 +4,39 @@ import ImageGallery from 'react-image-gallery';
 
 const images = [
   {
-    original: 'img/ema1.jpg',
-    thumbnail: 'img/ema1.jpg',
-    originalHeight: 400,
+    original: 'img/slider/out_ema1.jpg',
+    thumbnail: 'img/slider/out_ema1.jpg',
+    originalHeight: 370,
     thumbnailWidth: 15,
   },
   {
-    original: 'img/ema2.jpg',
-    thumbnail: 'img/ema2.jpg',
-    originalHeight: 400,
+    original: 'img/slider/out_f1.png',
+    thumbnail: 'img/slider/out_f1.png',
+    originalHeight: 370,
     thumbnailWidth: 15,
   },
   {
-    original: 'img/ema3.jpg',
-    thumbnail: 'img/ema3.jpg',
-    originalHeight: 400,
+    original: 'img/slider/out_m1.png',
+    thumbnail: 'img/slider/out_m1.png',
+    originalHeight: 370,
     thumbnailWidth: 15,
   },
   {
-    original: 'img/ema4.jpg',
-    thumbnail: 'img/ema4.jpg',
-    originalHeight: 400,
+    original: 'img/slider/out_setup3.png',
+    thumbnail: 'img/slider/out_setup3.png',
+    originalHeight: 370,
+    thumbnailWidth: 15,
+  },
+  {
+    original: 'img/slider/out_setup1.png',
+    thumbnail: 'img/slider/out_setup1.png',
+    originalHeight: 370,
+    thumbnailWidth: 15,
+  },
+  {
+    original: 'img/slider/out_setup2.png',
+    thumbnail: 'img/slider/out_setup2.png',
+    originalHeight: 370,
     thumbnailWidth: 15,
   }
 ];

@@ -122,7 +122,11 @@
 }
 
 .invalid-feedback{
-    color: #ff606e;
+    display: block;
+    color: #f80015;
+    font-size: 14px;
+    margin-top: 7px;
+    margin-bottom: 0px;
 }
 
 .valid-feedback{

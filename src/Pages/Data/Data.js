@@ -36,8 +36,8 @@ class Data extends React.Component {
                             <div className="query row anim-fade-in">
                                 <div className="col-sm-2 cool-font vcenter text-center">Subject:</div>
                                 <select onChange={handleSubject} defaultValue={this.state.subject} className="col-sm-1 form-select w-auto" aria-label="select subject">
-                                    <option value="s1">Subject - S1 (18, Male)</option>
-                                    <option value="s2">Subject - S2 (18, Female)</option>
+                                    <option value="s1">Subject - M2 (20, Male)</option>
+                                    <option value="s2">Subject - F4 (21, Female)</option>
                                 </select>
                             </div>
     
@@ -74,7 +74,7 @@ class Data extends React.Component {
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         )
     }

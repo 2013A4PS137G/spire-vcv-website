@@ -197,7 +197,7 @@ $danger: red;
 }
 
 .title{
-  color: orange; 
+  color: orange;
 }
   
 .para{
@@ -208,4 +208,12 @@ $danger: red;
 .link-style{
   color: orange;
   text-decoration: none;
+}
+
+.content-container{
+  overflow: hidden;
+}
+
+main{
+  min-height: 70vh;
 }

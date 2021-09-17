@@ -13,3 +13,7 @@ table {
       background-color: #ee9b1e !important;
       color: white;
    }
+
+   .align-middle{
+      text-align: center;
+   }

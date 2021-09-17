@@ -1,37 +1,78 @@
+/* eslint-disable no-useless-escape */
+/* eslint-disable no-constant-condition */
+/* eslint-disable no-unused-vars */
 import React from 'react'
+import $ from 'jquery'
 import './Download.css'
 
+const test_email = (email) => {
+    if(email != null){
+        if(email.indexOf('@') > -1)
+            return false;
+        else
+            return true;
+    }
+    return false;
+}
 
 class Download extends React.Component{
 
     constructor(props) {
         super(props);
         this.state = {
-            value: ''    
+            name: null,
+            organization: null,
+            email: null,
+            request: null,
+            value: ''   
         };
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleNameChange = this.handleNameChange.bind(this);
+        this.handleEmailChange = this.handleEmailChange.bind(this);
+        this.handleOrganizationChange = this.handleOrganizationChange.bind(this);
     }
 
-    handleSubmit(event) {
-        alert('An essay was submitted: ' + this.state.value);
-        console.log(event);
-        event.preventDefault();
-      }
+    handleNameChange(event) {
+        this.setState({name: event.target.value});
+    }
+
+    handleEmailChange(event) {
+        this.setState({email: event.target.value});
+    }
+
+    handleOrganizationChange(event) {
+        this.setState({organization: event.target.value});
+    }
+
+    componentDidMount() {
+        $("#req-form").submit(function(event){
+            var $form = $(this);
+            var serializedData = $form.serialize();
+            
+            if ($("#name").val() == '' || $("#email").val() == '' || test_email($("#email").val()) || $("#organization").val() == '') {
+                alert('Invalid form');
+            } else{
+                if (this.request) {
+                    this.request.abort();
+                }
+                this.request = $.ajax({
+                    url: "https://script.google.com/macros/s/AKfycbwSg59fiUsERc3g2TlVtOueJPFl-pI-WDzip2Qb-G2ltiTwKxepmJMM3pB2FaW6T8Tx/exec",
+                    type: "post",
+                    data: serializedData
+                });
+            
+                this.request.done(function (response, textStatus, jqXHR){
+                    alert('We have received your request. We will contact you soon through the email provided. If you have further queries, write to labspire@gmail.com');
+                });
+            
+                this.request.fail(function (jqXHR, textStatus, errorThrown){
+                    alert("POST error");
+                });
+            }
+            event.preventDefault();
+        });
+    }
 
     render(){
-        const forms = document.querySelectorAll('.requires-validation')
-        
-        Array.from(forms)
-        .forEach(function (form) {
-            form.addEventListener('submit', function (event) {
-            if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
-            }
-
-            form.classList.add('was-validated')
-            }, false)
-        })
 
         return (
             <div>
@@ -40,69 +81,26 @@ class Download extends React.Component{
                         <div className="column">
                             <h2 className="mar-down text-center title cool-font title-anim">Download</h2>
      
-                                <div className="form-content">
+                                <div className="form-content anim-fade-in">
                                     <div className="form-items">
                                         <h3>Register</h3>
                                         <p>Fill in the data below.</p>
-                                        <form onSubmit={this.handleSubmit} className="requires-validation" noValidate>
+                                        <form id="req-form" className="requires-validation" noValidate>
     
                                             <div className="col-md-12">
-                                            <input className="form-control" type="text" name="name" placeholder="Full Name" required/>
-                                            <div className="valid-feedback">Username field is valid!</div>
-                                            <div className="invalid-feedback">Username field cannot be blank!</div>
-                                            </div>
-    
-                                            <div className="col-md-12">
-                                                <input className="form-control" type="email" name="email" placeholder="E-mail Address" required/>
-                                                <div className="valid-feedback">Email field is valid!</div>
-                                                <div className="invalid-feedback">Email field cannot be blank!</div>
+                                                <input className="form-control" type="text" id="name" name="name" placeholder="Full Name" value={this.state.name} onChange={this.handleNameChange} required/>
+                                                { this.state.name == '' && <div className="invalid-feedback">* Required</div> }
                                             </div>
     
                                             <div className="col-md-12">
-                                                <input className="form-control" type="text" name="organization" placeholder="Organization" required/>
-                                                <div className="valid-feedback">Orrganization is valid!</div>
-                                                <div className="invalid-feedback">Organization field cannot be blank!</div>
+                                                <input className="form-control" type="email" id="email" name="email" placeholder="E-mail Address" value={this.state.email} onChange={this.handleEmailChange} required/>
+                                                { (this.state.email == '' || test_email(this.state.email)) && <div className="invalid-feedback">* Enter a valid email</div> }
                                             </div>
     
-                                        {/* <div className="col-md-12">
-                                                <select className="form-select mt-3" required>
-                                                    <option selected disabled value="">Position</option>
-                                                    <option value="jweb">Junior Web Developer</option>
-                                                    <option value="sweb">Senior Web Developer</option>
-                                                    <option value="pmanager">Project Manager</option>
-                                            </select>
-                                                <div className="valid-feedback">You selected a position!</div>
-                                                <div className="invalid-feedback">Please select a position!</div>
-                                        </div>
-    
-    
-                                        <div className="col-md-12">
-                                            <input className="form-control" type="password" name="password" placeholder="Password" required/>
-                                            <div className="valid-feedback">Password field is valid!</div>
-                                            <div className="invalid-feedback">Password field cannot be blank!</div>
-                                        </div>
-    
-    
-                                        <div className="col-md-12 mt-3">
-                                            <label className="mb-3 mr-1" for="gender">Gender: </label>
-    
-                                            <input type="radio" className="btn-check" name="gender" id="male" autocomplete="off" required/>
-                                            <label className="btn btn-sm btn-outline-secondary" for="male">Male</label>
-    
-                                            <input type="radio" className="btn-check" name="gender" id="female" autocomplete="off" required/>
-                                            <label className="btn btn-sm btn-outline-secondary" for="female">Female</label>
-    
-                                            <input type="radio" className="btn-check" name="gender" id="secret" autocomplete="off" required/>
-                                            <label className="btn btn-sm btn-outline-secondary" for="secret">Secret</label>
-                                            <div className="valid-feedback mv-up">You selected a gender!</div>
-                                                <div className="invalid-feedback mv-up">Please select a gender!</div>
+                                            <div className="col-md-12">
+                                                <input className="form-control" type="text" id="organization" name="organization" placeholder="Organization" value={this.state.organization} onChange={this.handleOrganizationChange} required/>
+                                                { this.state.organization == '' && <div className="invalid-feedback">* Required</div> }
                                             </div>
-    
-                                        <div className="form-check">
-                                        <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required/>
-                                        <label className="form-check-label">I confirm that all data are correct</label>
-                                        <div className="invalid-feedback">Please confirm that the entered data are all correct!</div>
-                                        </div> */}
                                 
     
                                             <div className="form-button mt-3">
@@ -116,6 +114,7 @@ class Download extends React.Component{
                         </div>
                     </div>
                 </div>
+
             </div>
         )
     }

@@ -1,0 +1,61 @@
+.footer-container{
+    background-color: #f8ac3b;
+    width: 100%;
+    margin-top:auto;
+    bottom: 0;
+    position: relative;
+}
+
+.g-map{
+    margin: 5%;
+    width: 90%;
+    height: 90%;
+    min-height: 200px !important;    
+    border:0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 0.35rem !important;
+    display: flex;
+}
+
+.footer-text-1{
+    color: aliceblue;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: 1.5rem;
+ }
+
+.footer-text-2{
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    word-wrap: break-word;
+}
+
+.footer-text-3{
+    color: rgba(0, 0, 0, 1);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.dst-logo{
+    width: 70%;
+    display: flex !important;
+    margin-bottom: 5%;
+}
+
+.affil{
+    height: 40%;
+    width: 50%;
+    display: flex !important;
+    margin-bottom: 5%;
+}
+
+.border-style{
+    padding: 0;
+    border-radius: 0.35rem !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.mail-text{
+    color: black !important;
+}

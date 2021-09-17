@@ -3,15 +3,14 @@ border: 5px solid green;
 padding: 5px;
 }
 
-.ill-orig{
+.gallery{
     float: right;
     max-width: 50%;
     position: relative;
     margin: 4%;
-    margin-top: 0px;
+    margin-top: 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 
 .para > ul > li {
     padding: 5px;

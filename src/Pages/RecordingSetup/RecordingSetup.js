@@ -1,5 +1,4 @@
 import React from 'react'
-import GalleryIllustration from '../../Components/GalleryIllustration/GalleryIllustration'
 import './RecordingSetup.css'
 
 const RecordingSetup = () => {
@@ -9,9 +8,9 @@ const RecordingSetup = () => {
                 <div id="section1" className="row align-items-center">
                     <div className="column align-items-center">
                         <h2 className="mar title cool-font title-anim">Recording &amp; Processing</h2>
-                        <div className="gallery anim-fade-in">
-                            <GalleryIllustration/>
-                        </div>
+                        
+                        <img src="img/ill-orig.png" className="ill-orig img-fluid rounded float-right anim-fade-in" alt="Illustration"></img>
+
                         <div className="para anim-fade-in"> 
                             <ul>
                             <li>
@@ -65,17 +64,20 @@ const RecordingSetup = () => {
                             </li>
 
                             <li id="annotation">
+                                <img src="img/ann-tool.svg" className="ann-tool img-fluid rounded float-right anim-fade-in" alt="Annotation tool"></img>
                                 <b>V-C-V Boundary annotation:</b>
                                 <ul>
                                     <li>The VCV boundaries were manually annotated by a team of four members.</li>
-                                    <li>These boundaries were marked using an in-house built MATLAB annotation tool by observing the wideband spectrogram, the raw waveform and glottal pulses obtained using 
+                                    
+                                    <li>These boundaries were marked using an <b>in-house built MATLAB annotation tool</b> by observing the wideband spectrogram, the raw waveform and glottal pulses obtained using 
                                     <a className="link-style" href="http://www.fon.hum.uva.nl/praat/" target="_blank" rel="noreferrer"> praat</a></li>
+                                    
                                     <ul>
                                         <li><b>For unvoiced consonants:</b> the last glottal pulse in the V<sub>1</sub> region was considered for marking the onset of the C region, and the 
                                         first glottal pulse at the start of V<sub>2</sub> region was for considered marking the end of C-region, in tandem with the spectrogram.</li>
                                         <li><b>For voiced consonants:</b> the spectrogram with the formants and time domain waveform were considered for marking the consonant start and end boundaries.  </li>
                                     </ul>
-                                    <li>A unanimous call was then taken for the boundary marking after an internal discussion among the annotators.</li>
+                                    <li>For ambiguous cases, a unanimous call was then taken for the boundary marking after an internal discussion among the annotators.</li>
                                 </ul>
                             </li>
                             </ul>  
@@ -83,6 +85,7 @@ const RecordingSetup = () => {
                     </div>
                 </div>
             </div>
+
         </div>
     )
 }
